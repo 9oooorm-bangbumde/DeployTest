@@ -31,7 +31,7 @@ jobs:
 
       - run: docker build -t changkiyun/final-project-frontend ./FrontEnd/goorm
       - run: docker build -t changkiyun/final-project-nginx ./nginx
-      - run: docker build -t changkiyun/finalproject-backend ./BackEnd/goorm
+      - run: docker build -t changkiyun/final-project-backend ./BackEnd/goorm
 
       - run: docker push changkiyun/final-project-frontend
       - run: docker push changkiyun/final-project-nginx
