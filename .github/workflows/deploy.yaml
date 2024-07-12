@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-      - run: docker build -t changkiyun/final-project-app -f ./FrontEnd/goorm/Dockerfile.dev ./frontend
+      - run: docker build -t changkiyun/final-project-app -f ./FrontEnd/goorm/Dockerfile.dev ./FrontEnd
       - run: docker run -e CI=true changkiyun/final-project-app npm test
 
       - run: docker build -t changkiyun/final-project-frontend ./FrontEnd/goorm
