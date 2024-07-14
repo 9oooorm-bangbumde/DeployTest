@@ -15,16 +15,7 @@ services:
       dockerfile: Dockerfile
       context: ./nginx
     ports: 
-      - "3000:80"
-
-  # backend:
-  #   build: 
-  #     dockerfile: Dockerfile.dev
-  #     context: ./BackEnd/goorm
-  #   container_name: app_backend
-  #   volumes:
-  #     - /app/node_modules
-  #     - ./BackEnd/goorm:/app
+      - "80:80"
 
   backend:
     build:
