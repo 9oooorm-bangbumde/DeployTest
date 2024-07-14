@@ -5,9 +5,9 @@ spring:
       on-profile: prod
   datasource:
     driverClassName: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://maria-test:3306/myapp
-    username: root
-    password: root
+    url: jdbc:mariadb://${MYSQL_HOST}:${MYSQL_PORT}/${MYSQL_DATABASE}
+    username: ${MYSQL_USER}
+    password: ${MYSQL_ROOT_PASSWORD}
   jpa:
     properties:
       hibernate:
