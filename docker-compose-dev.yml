@@ -23,9 +23,9 @@ services:
       context: ./BackEnd/goorm
     ports:
       - "8080:8080"
-    volumes:
-      - ./:/app/
-    # 
+    # volumes:
+    #   - ./:/app/
+
   database:
     build: ./mysql
     restart: unless-stopped
@@ -37,4 +37,4 @@ services:
       - ./mysql/sqls/:/docker-entrypoint-initdb.d/
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: myapp~
+      MYSQL_DATABASE: myapp

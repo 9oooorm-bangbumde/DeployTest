@@ -31,7 +31,7 @@ public class ChatController {
         chatService.sendChat(chatRequest);
     }
 
-    @PostMapping("/con_test")
+    @PostMapping("/api/con_test")
     public ChatResponse conTest(ChatRequest chatRequest) {
         ChatRoom chatRoom = new ChatRoom();
         chatRoom.setName("테스트 채팅룸");
