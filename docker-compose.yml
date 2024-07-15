@@ -18,8 +18,6 @@ services:
     image: changkiyun/final-project-frontend
     ports:
       - "8080:8080"
-    volumes:
-      - ./:/app/  
     environment: 
       MYSQL_HOST: $MYSQL_HOST 
       MYSQL_USER: $MYSQL_USER 

@@ -13,7 +13,7 @@ interface chatTest {
 function App() {
   const test = async(chat: chatTest[]): Promise<void> => {
     try {
-        const response = await axios.post('http://Final-project-app-env.eba-xdjqmujd.ap-northeast-2.elasticbeanstalk.com/api/con_test', chat);
+        const response = await axios.post('http://final-project-app-env.eba-xdjqmujd.ap-northeast-2.elasticbeanstalk.com/api/con_test', chat);
         console.log("post chat success", response.data);
     } catch(err) {
         console.error("failed to post chat", err);
