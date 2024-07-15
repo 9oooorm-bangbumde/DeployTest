@@ -34,13 +34,13 @@ public class ChatController {
     @PostMapping("/api/con_test")
     public ChatResponse conTest(ChatRequest chatRequest) {
         ChatRoom chatRoom = new ChatRoom();
-        chatRoom.setName("테스트 채팅룸");
+        chatRoom.setName("test chatroom");
         ChatRoom saved = chatRoomRepository.save(chatRoom);
 
         Chat chat = new Chat();
         chat.setRoom(saved);
-        chat.setMessage("테스트 메시지");
-        chat.setSender("테스트 발신자");
+        chat.setMessage("test message");
+        chat.setSender("test sender");
         chat.setSendDate(LocalDateTime.now());
         Chat savedChat = chatRepository.save(chat);
 
