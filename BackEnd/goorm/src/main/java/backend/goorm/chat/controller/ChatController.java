@@ -40,7 +40,7 @@ public class ChatController {
         Chat chat = new Chat();
         chat.setRoom(saved);
         chat.setMessage("test message");
-        chat.setSender("test sender");
+        chat.setSender(chatRequest.getSender());
         chat.setSendDate(LocalDateTime.now());
         Chat savedChat = chatRepository.save(chat);
 
