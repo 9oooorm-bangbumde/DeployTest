@@ -4,22 +4,19 @@ import './App.css';
 import axios from 'axios';
 
 
-interface chatTest {
-  sender: string;
-}
-
-
 
 function App() {
-  const test = async(chat: chatTest[]): Promise<void> => {
+  const handleClick = async () => {
     try {
-        const response = await axios.post('http://final-project-app-env.eba-xdjqmujd.ap-northeast-2.elasticbeanstalk.com/api/con_test', chat);
-        console.log("post chat success", response.data);
-    } catch(err) {
-        console.error("failed to post chat", err);
-        throw err;
+      const response = await axios.post('http://final-project-app-env.eba-xdjqmujd.ap-northeast-2.elasticbeanstalk.com/api/con_test', {
+        sender: 'sender'
+      });
+      console.log('Response:', response.data);
+    } catch (error) {
+      console.error('Error posting data:', error);
     }
-  }
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -35,7 +32,7 @@ function App() {
         >
           Learn React
         </a>
-        <button onClick={() => test([{ sender: "lee" }])}>test</button>
+        <button onClick={handleClick}>Send POST Request</button>
       </header>
     </div>
   );
